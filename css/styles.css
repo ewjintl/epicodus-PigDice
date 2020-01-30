@@ -1,0 +1,43 @@
+body {
+background-color: blanchedalmond; 
+color: white; 
+}
+
+.row {
+  align-content: center;
+  background-color: rebeccapurple;
+}
+
+.container {
+background-color: rebeccapurple;
+text-align: center;
+color: black;
+}
+
+.jumbotron {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwkEiKWROStiaDlzZPRoBNyTGGeihH7RE38Y6XRfWED-Rnwl7Zcw&s");
+  background-color: rgb(144, 116, 170);
+  color: rgb(49, 4, 49);
+}
+
+#playerOneTotal {
+  display: flex;
+  float: left;
+}
+
+#playerTwoTotal {
+  display: flex;
+  float: right;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.well {
+  display: flex;
+  text-align: center;
+  background-color: rgb(144, 116, 170);
+}

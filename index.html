@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
   <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
   <title>Pig Dice:</title>
 </head>
+
 <body>
+
   <div class="container">
     <div class="jumbotron">
       <h1>Pig Dice</h1>
-      <p><em>The old timey game!</em></p>
+      <p><em><b>The old timey game!</b></em></p>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="well">
-          <h2><strong>PLAYER ONE:</strong></h2>
+    <form id="gameDisplay">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="well">
+            <h2><strong>PLAYER ONE:</strong></h2>
+            <div id="playerOneTotal"></div>
+          </div>
         </div>
-
-      </div>
-      <div class="col-md-6">
+        <div class="col-md-6">
           <div class="well">
             <h2><strong>PLAYER TWO:</strong></h2>
+            <div id="playerTwoTotal"></div>
           </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <button class="btn btn-block btn-success">Roll!</button>
-        <button class="btn btn-block btn-warning">Hold!</button>
-        <button class="btn btn-block btn-danger">Reset</button>
+      <div class="row">
+        <div class="col-md-6">
+          <button id= "rollBtn" class="btn btn-block btn-success">Roll!</button>
+          <button class="btn btn-block btn-warning">Hold!</button>
+          <button class="btn btn-small btn-danger">Win or Lose: Play agan?
+          </button>
+    </form>
 
-
-      </div>
-    </div>
   </div>
-  
+  </div>
+  </div>
+
 </body>
+
 </html>

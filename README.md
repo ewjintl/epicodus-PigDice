@@ -19,9 +19,13 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 ## Specifications
 
 |       Behavior        |       Input       |       Output      |
-|----------------------:|:-----------------:|------------------:|
-| Player 1 roles two(?) dice to receive random number |    | 1,2,3,4,5 or 6 on either die|
-| 
+|:----------------------|:-----------------:|------------------:|
+| Click a roll button to generate a random number between 1-6 | Click | 1,2,3,4,5 or 6 |
+| Player one "Rolls" until they either "hold" or "roll" a "1". | Click | Adds acculmative score or adds 0.
+| Player two's turn begins. They follwo the same rules as player one. Roll until "hold" or they "roll" 1. | Click | Adds acculmative score or adds 0.
+| If one is rolled their score goes to 0. If they hold before rolling a 1 their total score is added and added to the player's respective column. | Click | player one rolls [4, 5, 3, 2, hold = 14] player two rolls [5, 6, 1 = 0] |
+| The first player to reach 100 + wins the game.
+
 
 ## Known Bugs
 
