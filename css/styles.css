@@ -36,8 +36,18 @@ color: black;
     justify-content: center;
 }
 
-.well {
-  display: flex;
-  text-align: center;
+.well{
+  display: flex center;
   background-color: rgb(144, 116, 170);
+}
+
+#instructions {
+  color: rebeccapurple; 
+  text-align: center;
+}
+
+.btn {
+  display: flex, center;
+  margin: 10px;
+  padding: 20px;
 }

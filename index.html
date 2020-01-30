@@ -26,7 +26,7 @@
             <h2><strong>PLAYER ONE</strong></h2>
             <div>
               <p>Your total score: <span id="playerOneTotal"></span></p>
-              <p>Your current acculmative roll: <span id="playerOneCurrent"> </span> </p>
+              <p>Your current roll score: <span id="playerOneCurrent"> </span> </p>
             </div>
           </div>
         </div>
@@ -35,15 +35,15 @@
             <h2><strong>PLAYER TWO</strong></h2>
             <div>
             <p>Your total score: <span id="playerTwoTotal"></span></p>
-            <p>Your current acculmative roll: <span id="playerTwoCurrent"> </span> </p>
+            <p>Your current roll score: <span id="playerTwoCurrent"> </span> </p>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <button id="rollBtn" class="btn btn-block btn-success">Roll!</button>
-          <button class="btn btn-block btn-warning">Hold!</button>
+          <button id="rollBtn" class="btn btn-block btn-success">Roll the dice!</button>
+          <button class="btn btn-block btn-warning">Do you want to hold?</button>
           <button class="btn btn-small btn-danger">Win or Lose: Play agan?
           </button>
     </form>
@@ -51,7 +51,26 @@
   </div>
   </div>
   </div>
+<div id="instructions">
+  <h2>Instructions:</h2>
+  <p>On a turn, a player rolls the die repeatedly. The goal is to accumulate as many points as possible, adding up the numbers rolled on the die. However, if a player rolls a 1, the player's turn is over and any points they have accumulated during this turn are forfeited. Rolling a 1 doesn't wipe out your entire score from previous turns, just the total earned during that particular roll.</p>
 
+    <p>A player can also choose to hold (stop rolling the die) if they do not want to take a chance of rolling a 1 and losing all of their points from this turn. If the player chooses to hold, all of the points rolled during that turn are added to his or her score.</p>
+    
+    <p>When a player reaches a total of 100 or more points, the game ends and that player is the winner.</p>
+    
+    <h3>Scoring Examples</h3>
+    <p>Here are two examples of how to keep score in Pig:</p>
+    
+    <p>Example 1: Sherri rolls a 3 and decides to continue rolling. She rolls seven more times, getting a 6, 6, 6, 4, 5, 6, and then 1. Because she rolled a 1, Sherri's turn is over and she earns 0 points for this turn.</p>
+    
+    <p>Example 2: Craig rolls a 6 and decides to continue. He then chooses to roll four more times, getting a 3, 4, 2, and 6. He decides to hold (and not take a chance of getting a 1). Craig earns 21 points for this turn (6+3+4+2+6 = 21).</p>
+    
+    <h3>Alternative Versions</h3>
+    <p>You can change the game of Pig a little by using two six-sided dice. In this version, if a player rolls and one of the dice is a 1, the turn ends and no points are scored (as in single-die Pig). However, if a player rolls 1s on both dice (snake eyes), that counts as 25 points.</p>
+    
+    <p>Other doubles are worth double points, so that rolling double 2s is worth 8 points, double 3s is worth 12 points, double 4s is worth 16 points, double 5s is worth 20 points, and double 6s is worth 24 points.</p>
+</div>
 </body>
 
 </html>
