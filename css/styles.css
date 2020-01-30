@@ -20,16 +20,6 @@ color: black;
   color: rgb(49, 4, 49);
 }
 
-#playerOneTotal {
-  display: flex;
-  float: left;
-}
-
-#playerTwoTotal {
-  display: flex;
-  float: right;
-}
-
 .row {
     display: flex;
     align-items: center;
@@ -46,8 +36,19 @@ color: black;
   text-align: center;
 }
 
+#rollBtn {
+  background-color: rgb(49, 99, 48);
+}
+#holdBtn {
+  background-color: rgb(212, 75, 208);
+}
 .btn {
   display: flex, center;
   margin: 10px;
   padding: 20px;
+  background-color: rgb(224, 42, 42);
+}
+
+.btn:hover {
+  background-color: rgb(255, 0, 0);
 }
