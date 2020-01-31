@@ -1,12 +1,7 @@
 // BACKEND LOGIC
 function ScoreCard() {
   this.players = [];
-}
-
-function Player(totalScore, turnScore, playerId) {
-  this.totalScore = totalScore;
-  this.turnScore = turnScore;
-  this.playerId = playerId;
+  this.currentPlayer = 1;
 }
 
 // pushes player 
@@ -20,7 +15,7 @@ ScoreCard.prototype.addPlayer = function (player) {
 //   return this.currentId;
 // }
 
-ScoreCard.prototype.findPlayer = function () {
+ScoreCard.prototype.findPlayer = function (id) {
   for (i = 0; i < this.players.length; i++) {
     if (this.players[i]) {
       if (this.players[i].id == id) {
@@ -31,11 +26,25 @@ ScoreCard.prototype.findPlayer = function () {
   return false;
 }
 
-var generateDiceRoll = function () {
-  roll = Math.ceil((Math.random() * 6));
-  return roll;
+ScoreCard.prototype.switch = function () {
+  if (this.currentPlayer === 0) {
+    this.currentPlayer = 1;
+  } else {
+    this.currentPlayer = 0;
+  }
 }
 
+ScoreCard.prototype.reset = function () {
+  player.totalScore = 0;
+  player.turnScore = 0;
+}
+
+function Player(totalScore, turnScore, playerId) {
+  this.totalScore = totalScore;
+  this.turnScore = turnScore;
+  this.playerId = playerId;
+  this.active = false;
+}
 
 Player.prototype.roll = function () {
   var currentRoll = generateDiceRoll();
@@ -46,7 +55,8 @@ Player.prototype.roll = function () {
   }
   return this.turnScore;
 };
-Player.prototype.hold = function() {
+
+Player.prototype.hold = function () {
   if (this.totalScore >= 100) {
     alert("Winner!")
   } else {
@@ -55,37 +65,38 @@ Player.prototype.hold = function() {
   return this.totalScore;
 }
 
-ScoreCard.prototype.reset = function () {
-  player.totalScore = 0;
-  player.turnScore = 0;
+var generateDiceRoll = function () {
+  roll = Math.ceil((Math.random() * 6));
+  return roll;
 }
 
-// FRONTEND LOGIC
-var newGame = new ScoreCard(playerOne, playerTwo);
-
-var playerOne = new Player(0, 0, 0);
-var playerTwo = new Player(0, 0, 1);
-
-
-// ScoreCard.assignId(playerOne);
-console.log(playerOne);
-console.log(playerTwo);
-
+//  frontend logic
 $(document).ready(function () {
-  $("button#rollBtn").on("click", function () {
-    event.preventDefault();
-    var rollOne = playerOne.roll();
-    $("#playerOneCurrent").text(rollOne);
+  var newGame = new ScoreCard(playerOne, playerTwo);
+  var playerOne = new Player(0, 0, 0);
+  var playerTwo = new Player(0, 0, 1);
+  $("button#rollBtn").click(function() {
+    if (newGame.currentPlayer === 1) {
+      var rollOne = playerOne.roll();     
+      $("#playerOneCurrent").text(rollOne);
+    } else {
+      var rollTwo = playerTwo.roll();
+      $("#playerTwoCurrent").text(rollTwo);
+    }
   });
 
-  $("button#holdBtn").on("click", function () {
-    event.preventDefault();
-    var holdOne = playerOne.hold();
-    $("#playerOneTotal").text(holdOne);
+  $("button#holdBtn").click(function() {
+    if (newGame.currentPlayer === 1) {
+      var holdOne = playerOne.hold();
+      $("#playerOneTotal").text(holdOne);
+    } else {
+      var holdTwo = playerTwo.hold();
+      $("#playerTwoTotal").text(holdTwo);
+    }
+    newGame.switch();
   });
 
-  $("button#resetBtn").on("click", function () {
-    event.preventDefault();
+  $("button#resetBtn").click(function() {
     reset
   });
 });
